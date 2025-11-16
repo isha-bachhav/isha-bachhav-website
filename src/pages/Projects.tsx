@@ -4,19 +4,25 @@ import { Button } from "@/components/ui/button";
 const Projects = () => {
   const projects = [
     {
-      title: "Network Security Scanner",
+      title: "Animal Welfare Association",
       description: "Automated tool for identifying vulnerabilities in network infrastructure",
       tech: ["Python", "Nmap", "Scapy"],
+      github: "https://github.com/isha-bachhav/animal-welfare-association",
+      demo: "https://animal-welfare-association.vercel.app/",
     },
     {
-      title: "Web Application Firewall",
+      title: "NASA ",
       description: "Custom WAF implementation with machine learning threat detection",
       tech: ["Go", "ML", "Docker"],
+      github: "https://github.com/yourusername/web-application-firewall",
+      demo: "https://astro-bio-quest.lovable.app/",
     },
     {
-      title: "Encryption Library",
+      title: "Web-linked CHMS",
       description: "High-performance cryptographic library for secure communications",
       tech: ["C++", "OpenSSL", "AES"],
+      github: "https://github.com/isha-bachhav/weblinked-chms",
+      demo: "https://weblinked-chms.vercel.app/",
     },
   ];
 
@@ -46,14 +52,35 @@ const Projects = () => {
                 ))}
               </div>
               <div className="flex gap-2">
-                <Button size="sm" variant="outline" className="flex-1">
-                  <Github className="h-4 w-4 mr-2" />
-                  Code
-                </Button>
-                <Button size="sm" className="flex-1">
-                  <ExternalLink className="h-4 w-4 mr-2" />
-                  Demo
-                </Button>
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1"
+                >
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    className="w-full flex justify-center items-center"
+                  >
+                    <Github className="h-4 w-4 mr-2" />
+                    Code
+                  </Button>
+                </a>
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1"
+                >
+                  <Button
+                    size="sm"
+                    className="w-full flex justify-center items-center"
+                  >
+                    <ExternalLink className="h-4 w-4 mr-2" />
+                    Demo
+                  </Button>
+                </a>
               </div>
             </div>
           ))}
