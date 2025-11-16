@@ -12,9 +12,9 @@ import Projects from "./pages/Projects";
 import Certifications from "./pages/Certifications";
 import Experiences from "./pages/Experiences";
 import Blog from "./pages/Blog";
-import Achievements from "./pages/Achievements";
+
 import Workshops from "./pages/Workshops";
-import Tools from "./pages/Tools";
+
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
@@ -35,9 +35,9 @@ const App = () => (
           <Route path="/certifications" element={<Certifications />} />
           <Route path="/experiences" element={<Experiences />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/achievements" element={<Achievements />} />
+          
           <Route path="/workshops" element={<Workshops />} />
-          <Route path="/tools" element={<Tools />} />
+          
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

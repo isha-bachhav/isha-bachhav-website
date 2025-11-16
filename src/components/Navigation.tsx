@@ -24,9 +24,9 @@ const Navigation = () => {
 
   const cyberVaultLinks = [
     { name: "Blog", path: "/blog" },
-    { name: "Achievements", path: "/achievements" },
+    
     { name: "Workshops & Events", path: "/workshops" },
-    { name: "Security Tools", path: "/tools" },
+    
   ];
 
   const isActive = (path: string) => location.pathname === path;
