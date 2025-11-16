@@ -5,8 +5,8 @@ import tailwindcss from "tailwindcss";
 import autoprefixer from "autoprefixer";
 
 // https://vitejs.dev/config/
-export default ({
-  base: "/isha-bachhav-portfolio-website/",
+export default defineConfig({
+  base: "/",  // IMPORTANT FOR VERCEL
   plugins: [react()],
   css: {
     postcss: {
