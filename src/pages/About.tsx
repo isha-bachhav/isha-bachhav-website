@@ -121,7 +121,7 @@ const About: React.FC = () => {
                   "AI & Cyber Security, Technical Writing, Research Communication, Music & Gaming for strategic thinking",
               },
               { label: "Email", value: "ishabachhav.official@email.com" },
-              { label: "Portfolio", value: "ishabachhav.vercel.app" },
+              { label: "Portfolio", value: "https://isha-bachhav-website.vercel.app/" },
             ].map((item, i) => (
               <motion.div
                 key={i}

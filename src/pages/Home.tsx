@@ -211,7 +211,7 @@ const Home = () => {
                💻 Software Developer  & Tester
               </div>
               <div className="bg-[#7FFF00]/10 border border-[#7FFF00]/30 py-4 rounded-lg">
-              🎥 Digital Creator
+              🎥 Web Developer
               </div>
             </div>
           </motion.div>

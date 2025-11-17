@@ -10,7 +10,7 @@ const Skills = () => {
     {
       icon: Code,
       title: "Programming",
-      skills: ["C", "C++ ","Java", "Python", "Android","Web Development Languages"],
+      skills: ["C", "C++ ","Java", "Python", ,"Web Development Languages","React","TailwindCSS"],
     },
     {
       icon: Network,
@@ -20,7 +20,7 @@ const Skills = () => {
     {
       icon: Database,
       title: "Systems",
-      skills: ["Linux", "Windows", "MySQL, SQL", "XAMPP"," GitHub" ]
+      skills: ["Linux", "Windows", "MySQL", "XAMPP"," GitHub" ]
     },
     {
       icon: Lock,
