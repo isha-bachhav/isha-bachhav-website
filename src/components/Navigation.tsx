@@ -81,7 +81,7 @@ const Navigation = () => {
         {isOpen && (
           <div className="md:hidden py-3 space-y-1 bg-black/95 rounded-lg shadow-lg">
 
-            {navLinks.map((link) => (
+            Q{navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
@@ -93,23 +93,13 @@ const Navigation = () => {
                 }`}
               >
                 {link.name}
+                
               </Link>
             ))}
 
-            <div className="px-4 pt-3 pb-1 text-gray-400 uppercase text-sm font-bold">
-              Cyber Vault
-            </div>
+            
 
-            {cyberVaultLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                onClick={() => setIsOpen(false)}
-                className="block px-6 py-2 text-gray-200 hover:text-[#7FFF00] hover:bg-[#7FFF00]/10 rounded-lg"
-              >
-                {link.name}
-              </Link>
-            ))}
+            
 
             <Link to="/contact" onClick={() => setIsOpen(false)}>
               <Button className="w-full mt-3 bg-[#7FFF00] text-black font-bold hover:bg-[#7FFF00]/80">
