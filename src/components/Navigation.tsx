@@ -24,22 +24,26 @@ const Navigation = () => {
 
   const cyberVaultLinks = [
     { name: "Blog", path: "/blog" },
-    
     { name: "Workshops & Events", path: "/workshops" },
-    
   ];
 
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-lg border-b border-[#7FFF00]/20 shadow-lg shadow-[#7FFF00]/10">
+    <nav className="fixed top-0 w-full z-50 bg-black/95 backdrop-blur-lg border-b border-[#7FFF00]/20 shadow-lg shadow-[#7FFF00]/10">
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-20">
-          <Link to="/" className="text-3xl font-bold tracking-wider" style={{ color: '#7FFF00', textShadow: '0 0 20px rgba(127, 255, 0, 0.5)' }}>
-        𝐃𝐞𝐜𝐫𝐲𝐩𝐭𝐢𝐧𝐠 𝐅𝐮𝐭𝐮𝐫𝐞..
+        <div className="flex justify-between items-center h-16 md:h-20">
+
+          {/* LOGO */}
+          <Link
+            to="/"
+            className="text-2xl md:text-3xl font-bold tracking-wider"
+            style={{ color: "#7FFF00", textShadow: "0 0 20px rgba(127,255,0,0.5)" }}
+          >
+            𝐃𝐞𝐜𝐫𝐲𝐩𝐭𝐢𝐧𝐠 𝐅𝐮𝐭𝐮𝐫𝐞..
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* DESKTOP NAV */}
           <div className="hidden md:flex items-center space-x-2">
             {navLinks.map((link) => (
               <Link
@@ -55,77 +59,62 @@ const Navigation = () => {
               </Link>
             ))}
 
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button 
-                  variant="ghost" 
-                  className="flex items-center gap-1 text-gray-300 hover:text-[#7FFF00] font-semibold tracking-wide"
-                >
-                  Cyber Vault <ChevronDown className="h-4 w-4" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-56 bg-black/95 border-[#7FFF00]/30">
-                {cyberVaultLinks.map((link) => (
-                  <DropdownMenuItem key={link.path} asChild>
-                    <Link to={link.path} className="cursor-pointer text-gray-300 hover:text-[#7FFF00] focus:text-[#7FFF00]">
-                      {link.name}
-                    </Link>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
 
             <Link to="/contact">
-              <Button 
-                className="ml-2 bg-[#7FFF00] text-black hover:bg-[#7FFF00]/90 font-bold tracking-wide px-6 shadow-lg shadow-[#7FFF00]/30"
-              >
+              <Button className="ml-2 bg-[#7FFF00] text-black hover:bg-[#7FFF00]/90 font-bold tracking-wide px-6 shadow-lg shadow-[#7FFF00]/30">
                 Contact Me
               </Button>
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* MOBILE MENU BUTTON */}
           <button
-            className="md:hidden"
+            className="md:hidden text-gray-300"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
           </button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* MOBILE MENU */}
         {isOpen && (
-          <div className="md:hidden py-4 space-y-2 animate-fade-in">
+          <div className="md:hidden py-3 space-y-1 bg-black/95 rounded-lg shadow-lg">
+
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
                 onClick={() => setIsOpen(false)}
-                className={`block px-4 py-2 rounded-lg transition-all ${
+                className={`block px-4 py-3 text-lg rounded-lg font-semibold ${
                   isActive(link.path)
-                    ? "bg-primary/20 text-primary"
-                    : "text-foreground hover:bg-secondary"
+                    ? "bg-[#7FFF00]/20 text-[#7FFF00]"
+                    : "text-gray-200 hover:bg-[#7FFF00]/10 hover:text-[#7FFF00]"
                 }`}
               >
                 {link.name}
               </Link>
             ))}
-            <div className="px-4 py-2 text-sm font-semibold text-muted-foreground">
+
+            <div className="px-4 pt-3 pb-1 text-gray-400 uppercase text-sm font-bold">
               Cyber Vault
             </div>
+
             {cyberVaultLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
                 onClick={() => setIsOpen(false)}
-                className="block px-8 py-2 rounded-lg text-foreground hover:bg-secondary transition-all"
+                className="block px-6 py-2 text-gray-200 hover:text-[#7FFF00] hover:bg-[#7FFF00]/10 rounded-lg"
               >
                 {link.name}
               </Link>
             ))}
+
             <Link to="/contact" onClick={() => setIsOpen(false)}>
-              <Button className="w-full mt-2">Contact Me</Button>
+              <Button className="w-full mt-3 bg-[#7FFF00] text-black font-bold hover:bg-[#7FFF00]/80">
+                Contact Me
+              </Button>
             </Link>
           </div>
         )}
